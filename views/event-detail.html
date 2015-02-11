@@ -1,3 +1,6 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
 <ul>
     <li class="event" id="event.id">
       <a href="/events/{{event.id}}">{{event.title}}.</a>
@@ -5,3 +8,4 @@
       {{event.attending.length}} attending so far.
     </li>
 </ul>
+{% endblock %}
