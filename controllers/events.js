@@ -157,12 +157,15 @@ function rsvp (request, response){
     response.status(404).send('No such event');
   }
 
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email)
+  && request.body.email.substring(
+    request.body.email.length - "@yale.edu".length).toLowerCase()
+    === "@yale.edu") {
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
   }else{
     var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
+    contextData.errors.push('You keep on knocking but you cant come in, ' + request.body.email + '.');
     response.render('event-detail.html', contextData);    
   }
 
