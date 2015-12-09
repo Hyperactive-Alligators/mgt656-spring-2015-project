@@ -1,5 +1,17 @@
 {% extends "layout.html" %}
 
+{% block script %}
+
+<script>
+  var b = document.getElementById("redirect");
+  b.onclick = function(event) {
+    alert("hey!")
+    
+  };
+</script>
+
+{% endblock %}
+
 {% block header %}
   <header>
     <h1>{{ title }}</h1>
@@ -11,6 +23,7 @@
     Welcome to the hyperactive alligator dome. Presented by MGT656.
   </p>
   <img id="logo" src="http://fc01.deviantart.net/fs70/f/2012/158/5/6/british_alligator_by_sasukes1gf4life-d52o451.png">
+  <img id="handsomedan" src="/img/handsome-dan-274x300.jpg">
   <div>
     {% include "fragments/events-list.html" %}
   </div>
@@ -21,4 +34,6 @@
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
+
+<button id="redirect">Go to Google</button>
 {% endblock %}
