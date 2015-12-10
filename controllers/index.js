@@ -30,7 +30,16 @@ function example (request, response) {
   response.render('example.html', contextData);
 }
 
+function donate (request, response) {
+  var contextData = {
+    'title': 'TA example',
+    'tagline': 'donate'
+  };
+  response.render('example.html', contextData);
+}
+
 module.exports = {
   index: index,
-  example: example
+  example: example,
+  donate: donate
 };
